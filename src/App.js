@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { memo, useCallback, useState } from "react";
+import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import VideoPlayer from "./pages/VideoPlayer";
+import Gif from "./pages/Gif";
 
-function App() {
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const App = () => {
+  const [videoSavedTime, setVideoSavedTime] = useState();
+  const [youtubeVideoId, setYoutubeVideoId] = useState();
+  const onSave = useCallback((id) => {
+    setVideoSavedTime(Date.now());
+    setYoutubeVideoId(id);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Container>
+          <Route exact path="/">
+            <Home currentId={youtubeVideoId} onSave={onSave} />
+          </Route>
+          <Route path="/video">
+            <VideoPlayer
+              videoId={youtubeVideoId}
+              videoSavedTime={videoSavedTime}
+            />
+          </Route>
+          <Route path="/gif">
+            <Gif />
+          </Route>
+        </Container>
+      </Switch>
+    </Router>
   );
-}
+};
 
-export default App;
+export default memo(App);
