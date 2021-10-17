@@ -39,4 +39,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - [Styled components](https://styled-components.com/docs) - Allows you to write actual CSS code to style your components.
 - [react-youtube](https://github.com/tjallingt/react-youtube) - Styled select input with placeholder.
 
-# App is hosted here [https://player-task-52a50.web.app/](https://player-task-52a50.web.app/}
+# App is hosted here [https://player-task-52a50.web.app/](https://player-task-52a50.web.app/)
