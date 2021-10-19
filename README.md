@@ -37,6 +37,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - [Create React App](https://github.com/facebook/create-react-app) - Create React apps with no build configuration.
 - [Styled components](https://styled-components.com/docs) - Allows you to write actual CSS code to style your components.
-- [react-youtube](https://github.com/tjallingt/react-youtube) - Styled select input with placeholder.
+- [react-youtube](https://github.com/tjallingt/react-youtube) - Simple React component acting as a thin layer over the YouTube IFrame Player API.
 
 # App is hosted here [https://player-task-52a50.web.app/](https://player-task-52a50.web.app/)
